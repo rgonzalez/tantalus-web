@@ -38,8 +38,43 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
-})
-
-;
-
+.controller( 'HomeCtrl', function HomeController( $scope,$interval ) {
+	//jquery code
+	/*$('#header')
+	.mouseover(function(){
+		$("#monitor").addClass('girado2');
+	})
+	.mouseout(function(){
+		$("#monitor").removeClass('girado2');
+	});*/
+	$scope.anim1=true;
+	$interval(function(){ //loop cursor animation
+		if ($scope.anim1) {
+			$(".cursor").animate({width:58,height:32},50);
+		} else {
+			$(".cursor").animate({width:53,height:29},50);
+		}
+		$scope.anim1=!$scope.anim1;
+		
+	},500);
+	
+	//red dot boton tele
+	$scope.redDotAnim=true;
+	$interval(function(){ //loop cursor animation
+		if ($scope.redDotAnim) {
+			$(".red-dot").removeClass("red-dot-shadow1").addClass("red-dot-shadow2");
+		} else {
+			$(".red-dot").removeClass("red-dot-shadow2").addClass("red-dot-shadow1");
+		}
+		$scope.redDotAnim=!$scope.redDotAnim;
+		
+	},1000);
+	
+  
+	
+	//vars
+	
+	$scope.loadedMenu=false;
+	$scope.cursoronstart=false;
+});
+//jquery code 

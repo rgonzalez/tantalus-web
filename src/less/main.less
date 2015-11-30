@@ -111,7 +111,95 @@ h2 {
   }
 }
 
+@font-face {
+font-family: 'ff-font';
+src: url('/assets/fonts/finalf.ttf');
+}
+.main-header {
+background-color: black;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-image: url('/assets/img/fondo-wall.png');
+    /* background-repeat: round; */
+    height: 500px;
+    background-size: 1800px 500px;
+}
 
+#intro {
+text-align: center;
+box-shadow: 1px 3px 42px 8px white;
+}
+.main-screen {
+background-color: white;
+	font-family: 'ff-font';
+    max-width: 900px;
+    height: 350px;
+    position: relative;
+    top: 100px;
+    margin: auto;
+    border: 31px solid gray;/*borde televisor*/
+}
+
+.start {
+    height: 50px;
+    margin: auto;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+.red-dot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    position: absolute;
+    top: 300px;
+    left: 700px;
+}
+
+.red-dot-shadow1 {
+box-shadow: 0px 1px 18px 4px red;
+}
+.red-dot-shadow2 {
+box-shadow: 0px 1px 18px 8px red;
+}
+
+.cursor-container {
+    display: inline-block;
+    height: 40px;
+    position: relative;
+    top: -11px;
+    width:80px;
+    height:40px;
+}
+.girado1 {
+
+    transform: perspective(973px) rotateY(-44deg);
+}
+
+.girado2 {
+transform: perspective(1000px) rotateY(-25deg);
+}
+
+.main-title {
+font-size: 50px;
+    font-weight: bold;
+    }
+#monitor {
+-webkit-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+    
+.tv-side {
+float: right;
+    height: 402px;
+    width: 129px;
+    position: absolute;
+    background-color: #2f2e2d;
+    top: 75px;
+    left: 1123px;
+    transform: perspective(380px) rotateY(25deg);
+    }
 /**
  * Now that all app-wide styles have been applied, we can load the styles for
  * all the submodules and components we are using. 

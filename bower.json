@@ -8,5 +8,7 @@
     "angular-bootstrap": "~0.10.0",
     "angular-ui-router": "~0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery-ui": "~1.11.4"
+  }
 }
