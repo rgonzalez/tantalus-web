@@ -67,7 +67,11 @@ module.exports = {
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
-      'vendor/jquery/dist/jquery.js'
+      'vendor/jquery/dist/jquery.js',
+      'vendor/jquery-ui/jquery-ui.js',
+      'vendor/jquery-ui/ui/core.js',
+      'vendor/jquery-ui/ui/effect.js',
+       'vendor/jquery-ui/ui/effect-fade.js'
     ],
     css: [
     ],

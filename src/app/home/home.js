@@ -38,7 +38,7 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope,$interval ) {
+.controller( 'HomeCtrl', function HomeController( $scope,$interval,$timeout ) {
 	//jquery code
 	/*$('#header')
 	.mouseover(function(){
@@ -71,10 +71,39 @@ angular.module( 'ngBoilerplate.home', [
 	},1000);
 	
   
-	
+	$scope.characters= [
+	{name: "BluestGreen",
+    img: "assets/img/caras/bluest1.png"},
+    {name: "FedeSith",
+    img: "assets/img/caras/fede1.png"},
+    {name: "Meyen",
+    img: "assets/img/caras/mey1.png"},
+    {name: "Nemure",
+    img: "assets/img/caras/nemure1.png"},
+    {name: "Quaixa",
+    img: "assets/img/caras/quaixa1.png"},
+    { name: "Raptor",
+    img: "assets/img/caras/raptor1.png"
+    },
+    { name: "Grupo",
+        img: "assets/img/caras/grupo.png"
+        }];
 	//vars
 	
 	$scope.loadedMenu=false;
 	$scope.cursoronstart=false;
+	$scope.screenContent = "home/intro.tpl.html";
+
+	$scope.loadMenu= function () {
+
+	$("#intro").effect("fade",1000);
+	$timeout(function(){ $scope.screenContent = "home/menu_screen.tpl.html";
+	$timeout(function(){
+		$("#screen-menu").effect("fade",1000);
+	},5);
+
+	},1000);
+
+	};
 });
 //jquery code 
