@@ -14,7 +14,8 @@
  */
 angular.module( 'ngBoilerplate.home', [
   'ui.router',
-  'plusOne'
+  'plusOne',
+  'galleryTantalus'
 ])
 
 /**
@@ -105,5 +106,49 @@ angular.module( 'ngBoilerplate.home', [
 	},1000);
 
 	};
+	$scope.frames = {
+	"Header":{
+	"pos":1,
+	"id":"frame-0",
+	"top":0},
+	"BluestGreen":{
+	"pos":2,
+	"id":"frame-1",
+	    "top":400
+	},
+    "FedeSith":{
+    "pos":3,
+    "id":"frame-1",
+    "top":400}
+    ,"Meyen":{
+    "pos":4,
+    "id":"frame-1",
+    "top":400},
+   "Nemure":{
+   "pos":5,
+    "id":"frame-1",
+    "top":400},
+   "Quaixa":{
+   "pos":6,
+    "id":"frame-1",
+    "top":400},
+    "Raptor":{
+    "pos":7,
+     "id":"frame-1",
+    "top":400},
+     "Grupo":{
+     "pos":8,
+   "id":"frame-1",
+    "top":400}
+	};
+	//click menu to each section
+	$scope.goTo=function(name){
+	$(".goto"+$scope.frames[name].pos).click();
+	};
+
+	/*initFrameCSS();
+
+    	Space = SpaceController()
+    	Space.init();*/
 });
 //jquery code 

@@ -1,6 +1,6 @@
 <div class="screen-menu" id="screen-menu">
     <div class="left-menu">
-        <div ng-repeat="char in characters" class="menu-char">
+        <div ng-repeat="char in characters" class="menu-char" ng-click="goTo(char.name)">
             <div class="img-char">
                 <img src="{{char.img}}">
             </div>

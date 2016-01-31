@@ -71,7 +71,9 @@ module.exports = {
       'vendor/jquery-ui/jquery-ui.js',
       'vendor/jquery-ui/ui/core.js',
       'vendor/jquery-ui/ui/effect.js',
-       'vendor/jquery-ui/ui/effect-fade.js'
+       'vendor/jquery-ui/ui/effect-fade.js',
+       'vendor/mixitup/build/jquery.mixitup.min.js',
+       'vendor/jquery-animateNumber/jquery.animateNumber.js'
     ],
     css: [
     ],
