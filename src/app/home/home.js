@@ -40,14 +40,17 @@ angular.module( 'ngBoilerplate.home', [
  * And of course we define a controller for our route.
  */
 .controller( 'HomeCtrl', function HomeController( $scope,$interval,$timeout ) {
-	//jquery code
-	/*$('#header')
-	.mouseover(function(){
-		$("#monitor").addClass('girado2');
-	})
-	.mouseout(function(){
-		$("#monitor").removeClass('girado2');
-	});*/
+
+
+
+
+
+
+
+
+
+
+
 	$scope.anim1=true;
 	$interval(function(){ //loop cursor animation
 		if ($scope.anim1) {
@@ -74,20 +77,27 @@ angular.module( 'ngBoilerplate.home', [
   
 	$scope.characters= [
 	{name: "BluestGreen",
-    img: "assets/img/caras/bluest1.png"},
+    img: "assets/img/caras/bluest1.png",
+    frame: "assets/img/frames/bluest-frame.jpg"},
     {name: "FedeSith",
-    img: "assets/img/caras/fede1.png"},
+    img: "assets/img/caras/fede1.png",
+     frame: "assets/img/frames/fede-frame.jpg"},
     {name: "Meyen",
-    img: "assets/img/caras/mey1.png"},
+    img: "assets/img/caras/mey1.png",
+     frame: "assets/img/frames/mey-frame.jpg"},
     {name: "Nemure",
-    img: "assets/img/caras/nemure1.png"},
+    img: "assets/img/caras/nemure1.png",
+     frame: "assets/img/frames/nemure-frame.jpg"},
     {name: "Quaixa",
-    img: "assets/img/caras/quaixa1.png"},
+    img: "assets/img/caras/quaixa1.png",
+      frame: "assets/img/frames/quaixa-frame.jpg"},
     { name: "Raptor",
-    img: "assets/img/caras/raptor1.png"
+    img: "assets/img/caras/raptor1.png",
+     frame: "assets/img/frames/raptor-frame.jpg"
     },
     { name: "Grupo",
-        img: "assets/img/caras/grupo.png"
+        img: "assets/img/caras/grupo.png",
+       frame: "assets/img/frames/bluest-frame.jpg"
         }];
 	//vars
 	
@@ -146,9 +156,6 @@ angular.module( 'ngBoilerplate.home', [
 	$(".goto"+$scope.frames[name].pos).click();
 	};
 
-	/*initFrameCSS();
-
-    	Space = SpaceController()
-    	Space.init();*/
 });
 //jquery code 
+

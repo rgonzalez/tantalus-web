@@ -1,5 +1,6 @@
 jQuery(document).ready(function($){
 	//variables
+	var seccionesLength = 8;//8 secciones
 	var hijacking= $('body').data('hijacking'),
 		animationType = $('body').data('animation'),
 		delta = 0,
@@ -13,8 +14,10 @@ jQuery(document).ready(function($){
     	prevArrow = verticalNav.find('a.cd-prev'),
     	nextArrow = verticalNav.find('a.cd-next');
 
-    	var goto1 = $('.goto1');
-    	var goto3 = $('.goto3');
+        var gotos=[];
+        for (var i =0; i<=seccionesLength;i++){ //8 secciones
+            gotos.push($('.goto'+i));
+        }
 
 	
 	//check the media query and bind corresponding events
@@ -43,8 +46,9 @@ jQuery(document).ready(function($){
 			}
 			prevArrow.on('click', prevSection);
     		nextArrow.on('click', nextSection);
-    		goto1.on('click',goToPos);
-    		goto3.on('click',goToPos);
+    		for (var j =0;j<=seccionesLength;j++) {
+    		    gotos[j].on('click',goToPos);
+    		}
     		
     		$(document).on('keydown', function(event){
 				if( event.which=='40' && !nextArrow.hasClass('inactive') ) {
@@ -127,16 +131,65 @@ function isInt(value) {
   return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
 }
 
+function barEffects(stats,maxs,names){
+    for (var i = 0; i<stats.length;i++){
+        //$('.progressbar-'+names[i]).each(function(){
+                var t = $('.'+names[i]+'-progressbar'),
+                    dataperc = ((stats[i]*100)/maxs[i]);//t.attr('data-perc'),
+                    barperc = Math.round(dataperc*2/*5.56*/);
+                t.find('.bar').animate({width:barperc}, dataperc*25);
+                t.find('.label').append('<div class="perc"></div>');
+
+                function perc() {
+                    var length = t.find('.bar').css('width'),
+                        perc = Math.round(parseInt(length)/2/*5.56*/),
+                        labelpos = (parseInt(length)-2);
+                    t.find('.label').css('left', labelpos);
+                    t.find('.perc').text(perc+'%');
+                }
+                perc();
+        //});
+    }
+}
+
+
 function restartStats(){
     $(".hp").text("0");
     $(".exp").text("0");
     $(".mana").text("0");
+    $(".hp-max").text("0");
+    $(".exp-max").text("0");
+    $(".mana-max").text("0");
+     $('.progressbar').each(function(){
+                var t = $(this),
+                    dataperc = 0,
+                    barperc = Math.round(dataperc*5.56);
+                t.find('.bar').animate({width:barperc}, 0);
+                t.find('.label').append('<div class="perc"></div>');
+
+                function perc() {
+                    var length = t.find('.bar').css('width'),
+                        perc = Math.round(parseInt(length)/5.56),
+                        labelpos = (parseInt(length)-2);
+                    t.find('.label').css('left', labelpos);
+                    t.find('.perc').text(perc+'%');
+                }
+                perc();
+                });
 }
 
 function setStats(){
-$('.hp').animateNumber({ number: Math.floor((Math.random() * 1000) + 1)});
-$('.mana').animateNumber({ number: Math.floor((Math.random() * 1000) + 1)});
-$('.exp').animateNumber({ number: Math.floor((Math.random() * 1000) + 1)});
+    var statsMaxs=[];
+    var statsNames=['hp','mana','exp'];
+    var stats=[];
+    var statsLength=3;
+    for (var i =0;i<=statsLength;i++) {
+        statsMaxs.push(Math.floor(Math.random() * (2000 - 500) + 500));
+        stats.push(Math.floor((Math.random() * statsMaxs[i]) + 1));
+        $('.'+statsNames[i]+'-max').text(statsMaxs[i]);
+        $('.'+statsNames[i]).animateNumber({ number: stats[i] });
+    }
+    barEffects(stats,statsMaxs,statsNames);
 }
 
 	function scrollHijacking (event) {

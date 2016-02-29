@@ -8,9 +8,9 @@
 </div>-->
 <!--https://codyhouse.co/gem/page-scroll-effects/-->
 <!--http://aishek.github.io/jquery-animateNumber/-->
+</script>
 <section class="cd-section visible">
-    <div id="frame1" class="div-section" ><!--  data-enter="fadeIn" data-exit="fadeOut zoomOut" -->
-        <!--<section class="space-inner-frame">-->
+    <div id="frame1" class="div-section" >
         <div class="main-header" id="header">
 
             <div >
@@ -35,15 +35,15 @@
         <!-- </section>-->
     </div>
 </section>
-<section class="cd-section">
-    <div id="frame2"  class="div-section" ><!--class="space-frame " data-enter="fadeIn" data-exit="fadeOut zoomOut"-->>
-        <!-- <section class="space-inner-frame div-frame">-->
+<section class="cd-section" ng-repeat="char in characters">
+    <div id="frame2"  class="div-section" >
         <div class="item-frame">
             <div class="frame-left">
                 <div class="name-frame">
-                    BLUESTGREEN
+                    {{char.name}}
                 </div>
-                <img ng-src="assets/img/frames/bluest-frame.jpg">
+                {{char.frame}}
+                <img ng-src="{{char.frame}}">
                 <div>
                     <table>
                         <tr>
@@ -51,7 +51,15 @@
                                 HP
                             </td>
                             <td>
-                                <span class="hp">0</span><span>/1000</span>
+                                <span class="hp">0</span>/<span class="hp-max"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="hp-progressbar progressbar" >
+                                    <div class="bar color3"><span></span></div>
+                                   <!-- <div class="label"><span></span></div>-->
+                                 </div>
                             </td>
                         </tr>
                         <tr>
@@ -59,7 +67,14 @@
                                 MANA
                             </td>
                             <td>
-                                <span class="mana">0</span><span>/1000</span>
+                                <span class="mana">0</span>/<span class="mana-max"></span>
+                            </td>
+                        </tr><tr>
+                            <td>
+                                <div class="mana-progressbar progressbar"  >
+                                    <div class="bar color4"><span></span></div>
+                                   <!-- <div class="label"><span></span></div>-->
+                                 </div>
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +82,14 @@
                                 EXP
                             </td>
                             <td>
-                                <span class="exp">0</span><span>/1000</span>
+                                <span class="exp">0</span>/<span class="exp-max"></span>
+                            </td>
+                        </tr><tr>
+                            <td>
+                                <div class="exp-progressbar progressbar"  >
+                                    <div class="bar color2"><span></span></div>
+                                   <!-- <div class="label"><span></span></div>-->
+                                 </div>
                             </td>
                         </tr>
                     </table>
@@ -80,42 +102,5 @@
         <!-- </section>-->
     </div>
 </section>
-<section class="cd-section">
-    <div  class="div-section"><!-- class="space-frame div-frame" data-enter="fadeIn" data-exit="fadeOut zoomOut">-->
-        <!--<section class="space-inner-frame">-->
-        FEDESITH
-        <!--</section>-->
-    </div>
-</section>
-
-<section class="cd-section">
-    <div  class="div-section"><!-- class="space-frame div-frame" data-enter="fadeIn" data-exit="fadeOut zoomOut">
-        <!--<section class="space-inner-frame">-->
-        MEYEN
-        <!--</section>-->
-    </div>
-</section>
-<div><!-- class="space-frame div-frame" data-enter="fadeIn" data-exit="fadeOut zoomOut">
-    <!-- <section class="space-inner-frame">-->
-    NEMURE
-    <!--</section>-->
-</div>
-
-<div><!-- class="space-frame div-frame" data-enter="fadeIn" data-exit="fadeOut zoomOut">
-    <!-- <section class="space-inner-frame">-->
-    QUAIXA
-    <!--</section>-->
-</div>
-
-<div><!-- class="space-frame div-frame" data-enter="fadeIn" data-exit="fadeOut zoomOut">
-    <!-- <section class="space-inner-frame">-->
-    RAPTOR
-    <!--</section>-->
-</div>
-<div><!-- class="space-frame div-frame" data-enter="fadeIn" data-exit="fadeOut zoomOut">
-    <!-- <section class="space-inner-frame">-->
-    GRUPAL
-    <!--</section>-->
-</div>
 
 
