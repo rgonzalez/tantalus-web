@@ -78,22 +78,57 @@ angular.module( 'ngBoilerplate.home', [
 	$scope.characters= [
 	{name: "BluestGreen",
     img: "assets/img/caras/bluest1.png",
-    frame: "assets/img/frames/bluest-frame.jpg"},
+    frame: "assets/img/frames/bluest-frame.jpg",
+    gallery: [
+    {name:"Final Fantasy 9",
+     char:"Garnet",
+     img:"assets/img/sesiones/ff9/19.png"
+    }
+    ]
+    },
     {name: "FedeSith",
     img: "assets/img/caras/fede1.png",
-     frame: "assets/img/frames/fede-frame.jpg"},
+     frame: "assets/img/frames/fede-frame.jpg",
+     gallery:[
+      {name:"Final Fantasy 9",
+          char:"Steiner",
+          img:"assets/img/sesiones/ff9/23.png"
+         }
+     ]},
     {name: "Meyen",
     img: "assets/img/caras/mey1.png",
-     frame: "assets/img/frames/mey-frame.jpg"},
+     frame: "assets/img/frames/mey-frame.jpg",
+      gallery:[
+           {name:"Final Fantasy 9",
+               char:"Beatrix",
+               img:"assets/img/sesiones/ff9/29.png"
+              }
+          ]
+     },
     {name: "Nemure",
     img: "assets/img/caras/nemure1.png",
-     frame: "assets/img/frames/nemure-frame.jpg"},
+     frame: "assets/img/frames/nemure-frame.jpg",
+      gallery:[ ]
+     },
     {name: "Quaixa",
     img: "assets/img/caras/quaixa1.png",
-      frame: "assets/img/frames/quaixa-frame.jpg"},
+      frame: "assets/img/frames/quaixa-frame.jpg",
+       gallery:[
+                      {name:"Final Fantasy 9",
+                          char:"Freya",
+                          img:"assets/img/sesiones/ff9/33.png"
+                         }
+                     ]
+      },
     { name: "Raptor",
     img: "assets/img/caras/raptor1.png",
-     frame: "assets/img/frames/raptor-frame.jpg"
+     frame: "assets/img/frames/raptor-frame.jpg",
+      gallery:[
+                {name:"Final Fantasy 9",
+                    char:"Yitan",
+                    img:"assets/img/sesiones/ff9/3.png"
+                   }
+               ]
     },
     { name: "Grupo",
         img: "assets/img/caras/grupo.png",
@@ -157,5 +192,28 @@ angular.module( 'ngBoilerplate.home', [
 	};
 
 });
-//jquery code 
 
+jQuery(document).ready(function($){
+//jquery code desplazamiento menu lateral
+$(".lateral-nav").hover(function() {
+
+    $(".lateral-nav").animate({
+        "left": "+=40px"
+    }, 200);
+}, function() {
+
+    $(".lateral-nav").animate({
+        "left": "-=40px"
+    }, 200);
+
+});
+
+$(".item-lateral-nav").hover(function() {
+
+   $(this).children(".arrow").show();
+}, function() {
+ $(this).children(".arrow").hide();
+
+});
+
+});

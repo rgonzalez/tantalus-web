@@ -1,14 +1,12 @@
-<!--<div class="fixed-back">
-    <div class="wall">
-        pared
-    </div>
-    <div class="floor">
-        suelo
-    </div>
-</div>-->
-<!--https://codyhouse.co/gem/page-scroll-effects/-->
-<!--http://aishek.github.io/jquery-animateNumber/-->
-</script>
+
+
+<div class="lateral-nav">
+<!--lateral menu -->
+<div class="item-lateral-nav" ng-repeat="char in characters">
+    <img ng-src="{{char.img}}" ng-click="goTo(char.name)">
+    <img src="assets/img/cursor.png" class="arrow">
+</div>
+</div>
 <section class="cd-section visible">
     <div id="frame1" class="div-section" >
         <div class="main-header" id="header">
@@ -42,9 +40,8 @@
                 <div class="name-frame">
                     {{char.name}}
                 </div>
-                {{char.frame}}
                 <img ng-src="{{char.frame}}">
-                <div>
+                <div class="stats-container">
                     <table>
                         <tr>
                             <td>
@@ -95,8 +92,10 @@
                     </table>
                 </div>
             </div>
-            <div class="frame-right">
-                TEXTO
+            <div class="frame-right"><!--derecha-->
+                <div ng-repeat="gal in char.gallery" class="char-gallery-link">
+                    <img ng-src="{{gal.img}}">
+                </div>
             </div>
         </div>
         <!-- </section>-->
