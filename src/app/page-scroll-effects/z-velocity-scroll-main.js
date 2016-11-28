@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
 	//variables
+
+	//if (window.location.href.indexOf("gallery") == -1){//if is not gallery
 	var animating=false;
 	var seccionesLength = 8;//8 secciones
 	var hijacking= $('body').data('hijacking'),
@@ -206,7 +208,11 @@ function setStats(){
             delta++;
             (delta >= scrollThreshold) && nextSection();
         }
-        return false;
+        if (window.location.href.indexOf("gallery") == -1){
+            return false;
+        } else {
+        return true;
+        }
     }
 
     var goTo=null;
@@ -555,6 +561,7 @@ function setStats(){
 
 		return [translateY, scale, rotateX, opacity, boxShadowBlur]; 
 	}
+	//}
 });
 
 /* Custom effects registration - feature available in the Velocity UI pack */

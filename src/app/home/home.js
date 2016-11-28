@@ -46,6 +46,7 @@ angular.module( 'ngBoilerplate.home', [
 
 
 
+$('body').css({overflow:'hidden'});
 
 
 
@@ -83,11 +84,15 @@ angular.module( 'ngBoilerplate.home', [
     {name:"Final Fantasy 9",
      char:"Garnet",
      img:"assets/img/sesiones/ff9/19.png"
-    }
+    },
+     {
+        name:"Final Fantasy XII",
+       char: "Serah Farron",
+       img:"assets/img/sesiones/ff13/1.png"}
     ]
     },
     {name: "FedeSith",
-    img: "assets/img/caras/fede1.png",
+      img: "assets/img/caras/fede1.png",
      frame: "assets/img/frames/fede-frame.jpg",
      gallery:[
       {name:"Final Fantasy 9",
@@ -102,7 +107,11 @@ angular.module( 'ngBoilerplate.home', [
            {name:"Final Fantasy 9",
                char:"Beatrix",
                img:"assets/img/sesiones/ff9/29.png"
-              }
+              },
+              {
+              name:"Final Fantasy XII",
+              char: "Vanille",
+              img:"assets/img/sesiones/ff13/1.png"}
           ]
      },
     {name: "Nemure",
@@ -114,11 +123,19 @@ angular.module( 'ngBoilerplate.home', [
     img: "assets/img/caras/quaixa1.png",
       frame: "assets/img/frames/quaixa-frame.jpg",
        gallery:[
-                      {name:"Final Fantasy 9",
-                          char:"Freya",
-                          img:"assets/img/sesiones/ff9/33.png"
-                         }
-                     ]
+       {name:"Final Fantasy 9",
+        char:"Freya",
+        img:"assets/img/sesiones/ff9/33.png"
+       },
+       {
+         name:"Final Fantasy XII",
+         char: "Fang",
+         img:"assets/img/sesiones/ff13/1.png"},
+       {
+          name:"Moribito",
+          char: "Balsa",
+          img:"assets/img/sesiones/moribito/1.png"}
+        ]
       },
     { name: "Raptor",
     img: "assets/img/caras/raptor1.png",
@@ -127,12 +144,28 @@ angular.module( 'ngBoilerplate.home', [
                 {name:"Final Fantasy 9",
                     char:"Yitan",
                     img:"assets/img/sesiones/ff9/3.png"
-                   }
+                   },
+                    {
+                     name:"Final Fantasy XII",
+                      char: "Snow",
+                      img:"assets/img/sesiones/ff13/1.png"},
+                      {
+                     name:"Guardians of the Galaxy",
+                      char: "Starlord",
+                       img:"assets/img/sesiones/raptor/1.png"},
+                      {
+                     name:"Dr Who",
+                  char: "Ten",
+                  img:"assets/img/sesiones/doctor_who/13.png"}
                ]
     },
     { name: "Grupo",
         img: "assets/img/caras/grupo.png",
-       frame: "assets/img/frames/bluest-frame.jpg"
+       frame: "assets/img/frames/bluest-frame.jpg",
+       gallery:[
+       {
+       name:"League of Legends",
+       img:"assets/img/sesiones/lol/1.png"}]
         }];
 	//vars
 	

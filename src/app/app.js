@@ -8,19 +8,24 @@ angular.module( 'ngBoilerplate', [
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
   $urlRouterProvider.otherwise( '/home' );
+  /*$locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });*/
 })
 
 .run( function run () {
+
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+      $scope.pageTitle = 'TANTALUS COSPLAY' ;
     }
+    $scope.baseUrl= "http://localhost:63342/tantalus-web/build/#";
   });
 })
-
 ;
 
 
